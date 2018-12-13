@@ -1,4 +1,4 @@
-# Pipeline Components: _Rubocop_
+# Pipeline Components: rubocop
 
 ![Project Stage][project-stage-shield]
 ![Project Maintenance][maintenance-shield]
@@ -14,16 +14,18 @@
 
 ## Usage
 
-The image is for running _rubocop_, _rubocop_ is installed in /app/ in case you need to customize the install before usage. The image is based on alpine:3.8
+The image is for running rubocop, rubocop is installed in /app/ in case you need to customize the install before usage.
+The image is based on ruby:2.5.3-alpine3.8
 
 ## Examples
 
 ```yaml
-_rubocop_:
+rubocop:
   stage: linting
-  image: pipelinecomponents/_rubocop_:latest
+  image: pipelinecomponents/rubocop:latest
   script:
-    - _rubocop_ .
+    - rubocop  -P -E  .
+
 ```
 
 ## Versioning
@@ -82,24 +84,24 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-[commits]: https://gitlab.com/pipeline-components/_rubocop_/commits/master
-[contributors]: https://gitlab.com/pipeline-components/_rubocop_/graphs/master
-[dockerhub]: https://hub.docker.com/r/pipelinecomponents/_rubocop_
+[commits]: https://gitlab.com/pipeline-components/rubocop/commits/master
+[contributors]: https://gitlab.com/pipeline-components/rubocop/graphs/master
+[dockerhub]: https://hub.docker.com/r/pipelinecomponents/rubocop
 [license-shield]: https://img.shields.io/badge/License-MIT-green.svg
 [mjrider]: https://gitlab.com/mjrider
-[gitlabci-shield]: https://img.shields.io/gitlab/pipeline/pipeline-components/_rubocop_.svg
-[gitlabci]: https://gitlab.com/pipeline-components/_rubocop_/commits/master
-[issue]: https://gitlab.com/pipeline-components/_rubocop_/issues
+[gitlabci-shield]: https://img.shields.io/gitlab/pipeline/pipeline-components/rubocop.svg
+[gitlabci]: https://gitlab.com/pipeline-components/rubocop/commits/master
+[issue]: https://gitlab.com/pipeline-components/rubocop/issues
 [keepchangelog]: http://keepachangelog.com/en/1.0.0/
-[layers-shield]: https://images.microbadger.com/badges/image/pipelinecomponents/_rubocop_.svg
+[layers-shield]: https://images.microbadger.com/badges/image/pipelinecomponents/rubocop.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2018.svg
-[microbadger]: https://microbadger.com/images/pipelinecomponents/_rubocop_
+[microbadger]: https://microbadger.com/images/pipelinecomponents/rubocop
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
-[pulls-shield]: https://img.shields.io/docker/pulls/pipelinecomponents/_rubocop_.svg
-[releases]: https://gitlab.com/pipeline-components/_rubocop_/tags
-[repository]: https://gitlab.com/pipeline-components/_rubocop_
+[pulls-shield]: https://img.shields.io/docker/pulls/pipelinecomponents/rubocop.svg
+[releases]: https://gitlab.com/pipeline-components/rubocop/tags
+[repository]: https://gitlab.com/pipeline-components/rubocop
 [semver]: http://semver.org/spec/v2.0.0.html
-[version-shield]: https://images.microbadger.com/badges/version/pipelinecomponents/_rubocop_.svg
+[version-shield]: https://images.microbadger.com/badges/version/pipelinecomponents/rubocop.svg
 
 [frenck]: https://github.com/frenck
 [hassio-addons]: https://github.com/hassio-addons
