@@ -1,4 +1,4 @@
-FROM ruby:2.5.3-alpine3.8 as build
+FROM ruby:2.6.0-alpine3.8 as build
 
 # Ignore dependecies, they are for support only
 # hadolint ignore=DL3018
