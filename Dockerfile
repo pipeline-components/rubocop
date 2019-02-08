@@ -9,7 +9,7 @@ COPY app /app/
 RUN bundle install --frozen --deployment --binstubs=/app/bin/ --no-cache --standalone
 
 # app image
-FROM ruby:2.5.3-alpine3.8 as app
+FROM ruby:2.6.0-alpine3.8
 WORKDIR /app/
 COPY --from=build /app/ /app/
 ENV PATH "${PATH}:/app/bin/"
