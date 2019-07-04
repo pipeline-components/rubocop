@@ -8,5 +8,8 @@
   "labels": [
     "Type::Maintenance"
   ],
-  "separateMultipleMajor": true
+  "separateMultipleMajor": true,
+  "bundler": {
+    "enabled": true
+  }
 }
