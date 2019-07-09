@@ -3,6 +3,8 @@ FROM ruby:2.6.3-alpine3.8 as build
 # Ignore dependecies, they are for support only
 # hadolint ignore=DL3018
 RUN apk add --no-cache make build-base
+RUN gem install bundler
+RUN bundle config --global frozen 1
 
 WORKDIR /app/
 COPY app /app/
