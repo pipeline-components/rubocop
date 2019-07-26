@@ -1,4 +1,4 @@
-FROM ruby:2.6.3-alpine3.8 as build
+FROM ruby:2.6.3-alpine3.10 as build
 
 # Ignore dependecies, they are for support only
 # hadolint ignore=DL3018
@@ -13,7 +13,7 @@ RUN bundle install --frozen --deployment --binstubs=/app/bin/ --no-cache --stand
 RUN rm -rf  vendor/bundle/ruby/*/cache
 
 # app image
-FROM ruby:2.6.3-alpine3.8
+FROM ruby:2.6.3-alpine3.10
 WORKDIR /app/
 COPY --from=build /app/ /app/
 ENV PATH "${PATH}:/app/bin/"
