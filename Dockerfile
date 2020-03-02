@@ -10,7 +10,7 @@ WORKDIR /app/
 COPY app /app/
 RUN bundle install --frozen --deployment --binstubs=/app/bin/ --no-cache --standalone
 # Because --no-cache is broken https://github.com/bundler/bundler/issues/6680
-RUN rm -rf  vendor/bundle/ruby/*/cache
+RUN rm -vrf  vendor/bundle/ruby/*/cache
 
 # app image
 FROM pipelinecomponents/base-entrypoint:0.2.0 as entrypoint
