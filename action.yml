@@ -1,5 +1,5 @@
 ---
-name: 'rubocop'
+name: 'pipeline-components-rubocop'
 description: 'rubocop by Pipeline Components'
 author: 'Robbert Müller <spam.me@grols.ch>'
 branding:
