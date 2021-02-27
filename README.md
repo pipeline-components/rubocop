@@ -22,7 +22,7 @@ The image is based on ruby:2.5.3-alpine3.8
 ```yaml
 rubocop:
   stage: linting
-  image: pipelinecomponents/rubocop:latest
+  image: registry.gitlab.com/pipeline-components/rubocop:latest
   script:
     - rubocop  -P -E  .
 
