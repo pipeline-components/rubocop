@@ -7,6 +7,8 @@ include:
 test amd64:
   variables:
     BUILD_ARCH: amd64
+  needs:
+    - 'build amd64'
   extends: .test
   script:
     - docker run --rm "${CI_REGISTRY_IMAGE}/build:${BUILD_ARCH}-${CI_COMMIT_SHA}" rubocop --version
@@ -14,6 +16,8 @@ test amd64:
 test amd64 defaultcmd:
   variables:
     BUILD_ARCH: amd64
+  needs:
+    - 'build amd64'
   extends: .test
   script:
     - docker run --rm "${CI_REGISTRY_IMAGE}/build:${BUILD_ARCH}-${CI_COMMIT_SHA}" --version
