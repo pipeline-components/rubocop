@@ -1,4 +1,4 @@
-FROM ruby:2.7.1-alpine3.12 as build
+FROM ruby:3.0.2-alpine3.12 as build
 
 # Ignore dependecies, they are for support only
 # hadolint ignore=DL3018
@@ -15,7 +15,7 @@ RUN rm -vrf  vendor/bundle/ruby/*/cache
 # app image
 FROM pipelinecomponents/base-entrypoint:0.4.0 as entrypoint
 
-FROM ruby:2.7.1-alpine3.12
+FROM ruby:3.0.2-alpine3.12
 COPY --from=entrypoint /entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 ENV DEFAULTCMD rubocop
