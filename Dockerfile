@@ -2,15 +2,15 @@ FROM ruby:3.0.2-alpine3.12 as build
 
 # Ignore dependecies, they are for support only
 # hadolint ignore=DL3018
-RUN apk add --no-cache make build-base
-RUN gem install bundler:2.0.2
-RUN bundle config --global frozen 1
+RUN apk add --no-cache make build-base && \
+    gem install bundler:2.0.2 && \
+    bundle config --global frozen 1
 
 WORKDIR /app/
 COPY app /app/
-RUN bundle install --frozen --deployment --binstubs=/app/bin/ --no-cache --standalone
+RUN bundle install --frozen --deployment --binstubs=/app/bin/ --no-cache --standalone && \
 # Because --no-cache is broken https://github.com/bundler/bundler/issues/6680
-RUN rm -vrf  vendor/bundle/ruby/*/cache
+    rm -vrf  vendor/bundle/ruby/*/cache
 
 # app image
 FROM pipelinecomponents/base-entrypoint:0.5.0 as entrypoint
