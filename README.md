@@ -83,14 +83,14 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-[commits]: https://gitlab.com/pipeline-components/rubocop/commits/master
-[contributors]: https://gitlab.com/pipeline-components/rubocop/graphs/master
+[commits]: https://gitlab.com/pipeline-components/rubocop/-/commits/master
+[contributors]: https://gitlab.com/pipeline-components/rubocop/-/graphs/master
 [dockerhub]: https://hub.docker.com/r/pipelinecomponents/rubocop
 [license-shield]: https://img.shields.io/badge/License-MIT-green.svg
 [mjrider]: https://gitlab.com/mjrider
 [discord]: https://discord.gg/vhxWFfP
 [gitlabci-shield]: https://img.shields.io/gitlab/pipeline/pipeline-components/rubocop.svg
-[gitlabci]: https://gitlab.com/pipeline-components/rubocop/commits/master
+[gitlabci]: https://gitlab.com/pipeline-components/rubocop/-/commits/master
 [issue]: https://gitlab.com/pipeline-components/rubocop/issues
 [keepchangelog]: http://keepachangelog.com/en/1.0.0/
 [layers-shield]: https://images.microbadger.com/badges/image/pipelinecomponents/rubocop.svg
