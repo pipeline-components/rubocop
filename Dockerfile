@@ -1,4 +1,4 @@
-FROM ruby:3.2.2-alpine3.17 as build
+FROM ruby:3.2.2-alpine3.17 AS build
 
 # Ignore dependecies, they are for support only
 # hadolint ignore=DL3018
@@ -13,16 +13,16 @@ RUN bundle install --frozen --deployment --binstubs=/app/bin/ --no-cache --stand
     rm -vrf  vendor/bundle/ruby/*/cache
 
 # app image
-FROM pipelinecomponents/base-entrypoint:0.5.0 as entrypoint
+FROM pipelinecomponents/base-entrypoint:0.5.0 AS entrypoint
 
 FROM ruby:3.2.2-alpine3.17
 COPY --from=entrypoint /entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
-ENV DEFAULTCMD rubocop
+ENV DEFAULTCMD=rubocop
 
 WORKDIR /app/
 COPY --from=build /app/ /app/
-ENV PATH "${PATH}:/app/bin/"
+ENV PATH="${PATH}:/app/bin/"
 
 WORKDIR /code/
 # Build arguments
