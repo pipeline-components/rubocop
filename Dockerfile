@@ -3,7 +3,7 @@ FROM ruby:3.2.2-alpine3.17 AS build
 # Ignore dependecies, they are for support only
 # hadolint ignore=DL3018
 RUN apk add --no-cache make build-base && \
-    gem install bundler:2.0.2 && \
+    gem install bundler:2.5.20 && \
     bundle config --global frozen 1
 
 WORKDIR /app/
