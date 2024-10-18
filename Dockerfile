@@ -1,9 +1,9 @@
-FROM ruby:3.2.2-alpine3.17 as build
+FROM ruby:3.2.5-alpine3.20 AS build
 
 # Ignore dependecies, they are for support only
 # hadolint ignore=DL3018
 RUN apk add --no-cache make build-base && \
-    gem install bundler:2.0.2 && \
+    gem install bundler:2.5.20 && \
     bundle config --global frozen 1
 
 WORKDIR /app/
@@ -13,16 +13,16 @@ RUN bundle install --frozen --deployment --binstubs=/app/bin/ --no-cache --stand
     rm -vrf  vendor/bundle/ruby/*/cache
 
 # app image
-FROM pipelinecomponents/base-entrypoint:0.5.0 as entrypoint
+FROM pipelinecomponents/base-entrypoint:0.5.0 AS entrypoint
 
-FROM ruby:3.2.2-alpine3.17
+FROM ruby:3.2.5-alpine3.20
 COPY --from=entrypoint /entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
-ENV DEFAULTCMD rubocop
+ENV DEFAULTCMD=rubocop
 
 WORKDIR /app/
 COPY --from=build /app/ /app/
-ENV PATH "${PATH}:/app/bin/"
+ENV PATH="${PATH}:/app/bin/"
 
 WORKDIR /code/
 # Build arguments
