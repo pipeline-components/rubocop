@@ -4,11 +4,12 @@ FROM ruby:3.3.6-alpine3.20 AS build
 # hadolint ignore=DL3018
 RUN apk add --no-cache make build-base && \
     gem install bundler:2.5.20 && \
-    bundle config --global frozen 1
+    bundle config --global frozen 1 && \
+    bundle config --global set deployment true
 
 WORKDIR /app/
 COPY app /app/
-RUN bundle install --frozen --deployment --binstubs=/app/bin/ --no-cache --standalone && \
+RUN bundle install --binstubs=/app/bin/ --no-cache --standalone && \
 # Because --no-cache is broken https://github.com/bundler/bundler/issues/6680
     rm -vrf  vendor/bundle/ruby/*/cache
 
