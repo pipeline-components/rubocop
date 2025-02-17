@@ -38,7 +38,7 @@ LABEL \
     org.label-schema.name="Rubocop" \
     org.label-schema.schema-version="1.0" \
     org.label-schema.url="https://pipeline-components.gitlab.io/" \
-    org.label-schema.usage="https://gitlab.com/pipeline-components/rubocop/blob/master/README.md" \
+    org.label-schema.usage="https://gitlab.com/pipeline-components/rubocop/blob/main/README.md" \
     org.label-schema.vcs-ref=${BUILD_REF} \
     org.label-schema.vcs-url="https://gitlab.com/pipeline-components/rubocop/" \
     org.label-schema.vendor="Pipeline Components"
