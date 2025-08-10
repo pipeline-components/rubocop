@@ -14,7 +14,6 @@
 ## Usage
 
 The image is for running rubocop, rubocop is installed in /app/ in case you need to customize the install before usage.
-The image is based on ruby:3.2.5-alpine3.20
 
 ## Examples
 
